@@ -7,7 +7,9 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
@@ -76,6 +78,7 @@ public class ReadInternalImages {
         assert cursor != null;
         LoadedImages.totalCount = cursor.getCount();
         ProgressBar progressBar = ((Activity) context).findViewById(R.id.load_progress);
+        TextView progressText = ((Activity) context).findViewById(R.id.textView_contrast);
         progressBar.setMin(0);
         progressBar.setMax(100);
         progressBar.setProgress(0);
@@ -99,6 +102,9 @@ public class ReadInternalImages {
 
             LoadedImages.imageCount++;
             if (LoadedImages.totalCount > 0) {
+                String progress = String.valueOf((LoadedImages.imageCount*100)/LoadedImages.totalCount);
+                Log.e("TAG", "getImageAndAlbums: "+progress );
+               // progressText.setText(progress);
                 progressBar.setProgress((LoadedImages.imageCount*100)/LoadedImages.totalCount);
             }
         }

@@ -39,7 +39,7 @@ public class FontListAdapter extends RecyclerView.Adapter<FontListAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.fontItemList.setText(mFontNames[position]);
         holder.fontItemList.setTypeface(mFonts[position]);
-        holder.fontItemList.setTextColor(Color.WHITE);
+        holder.fontItemList.setTextColor(Color.BLACK);
         holder.fontItemList.setTextSize(30);
         holder.fontItemList.setOnClickListener(v -> listener.onFontClick(position));
     }

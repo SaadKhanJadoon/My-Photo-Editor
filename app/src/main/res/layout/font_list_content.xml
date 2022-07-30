@@ -10,5 +10,6 @@
         android:layout_height="wrap_content"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:padding="20dp"
+        android:textColor="@color/black"
         android:text="TextView" />
 </LinearLayout>
